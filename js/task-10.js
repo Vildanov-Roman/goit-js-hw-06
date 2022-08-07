@@ -16,7 +16,8 @@ const createBoxes = amount => {
         
         div.style.width = `${30 + 10 * i}px`
         div.style.height = `${30 + 10 * i}px`
-        div.style.bacground = getRandomHexColor();
+        div.style.background = getRandomHexColor();
+        div.style.marginBottom = '5px'
         collection.push(div)
     }
     return collection;
@@ -24,15 +25,13 @@ const createBoxes = amount => {
 
 create.addEventListener('click', () => {
     let plusBox = createBoxes(input.value )
-    boxes.append(plusBox)
+    boxes.append(...plusBox)
 })
 
 const remuveBoxes = () => {
     boxes.innerHTML = ''
 }
 
-
 destroy.addEventListener('click', () => {
     remuveBoxes.call()
 })
-
